@@ -50,5 +50,24 @@ class Student
     new_student.save
     return new_student
   end
+  
+  def self.new_from_db
+    # creates an instance with corresponding attribute values
+  end
+  
+  def self.find_by_name
+    # returns an instance of student that matches the name from the DB
+  end
+  
+  def update
+    # updates the record associated with a given instance
+    sql = <<-SQL
+              UPDATE TABLE students
+              SET name = ?, grade = ?
+              WHERE id = ?;
+            SQL
+    DB[:conn].execute(sql, self.name, self.grade, self.id)
+    return self
+  end
 
 end
