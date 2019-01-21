@@ -34,9 +34,13 @@ class Student
     if self.id
       self.update
     else
+      # this instance is not yet in the database
       sql = <<-SQL
                 INSERT INTO students(name, grade)
-                VALUES ?, ?
+                VALUES (?, ?)
+              SQL
+      DB[:conn].execute(sql, self.name, self.grade)
+      @id = DB[:conn].execute("SELECT last_")
   end
 
 end
