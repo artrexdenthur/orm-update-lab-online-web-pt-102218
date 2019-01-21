@@ -36,7 +36,7 @@ class Student
     else
       sql = <<-SQL
                 UPDATE TABLE students
-                
+                SET name = ? 
   end
 
 end
