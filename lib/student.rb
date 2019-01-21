@@ -51,7 +51,8 @@ class Student
     return new_student
   end
   
-  def self.new_from_db
+  def self.new_from_db(db_row_arr)
+    
     # creates an instance with corresponding attribute values
   end
   
