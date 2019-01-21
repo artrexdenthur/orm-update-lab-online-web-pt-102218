@@ -56,8 +56,13 @@ class Student
     # creates an instance with corresponding attribute values
   end
   
-  def self.find_by_name
+  def self.find_by_name(name)
     # returns an instance of student that matches the name from the DB
+    sql = <<-SQL
+              SELECT * FROM students
+              WHERE name = ?;
+            SQL
+    new_from_db(DB[:conn].execute(sql, name)[0])
   end
   
   def update
