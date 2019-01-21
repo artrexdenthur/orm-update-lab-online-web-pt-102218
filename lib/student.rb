@@ -62,7 +62,7 @@ class Student
   def update
     # updates the record associated with a given instance
     sql = <<-SQL
-              UPDATE TABLE students
+              UPDATE students
               SET name = ?, grade = ?
               WHERE id = ?;
             SQL
