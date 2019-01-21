@@ -35,8 +35,7 @@ class Student
       self.update
     else
       sql = <<-SQL
-                UPDATE TABLE students
-                SET name = ? 
+                INSERT INTO students
   end
 
 end
