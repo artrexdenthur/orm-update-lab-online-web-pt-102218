@@ -52,7 +52,7 @@ class Student
   end
   
   def self.new_from_db(db_row_arr)
-    
+    new(db_row_arr[1], db_row_arr[2], db_row_arr[0])
     # creates an instance with corresponding attribute values
   end
   
